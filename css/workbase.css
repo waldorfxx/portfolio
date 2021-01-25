@@ -247,12 +247,12 @@ button:focus {
 	display: block;
 }
 
-.section__img {
+.section__img img{
 	height: 45vh;
-	pointer-events: none;
 }
 
 .section__img-inner {
+	
 	width: 100%;
 	height: 100%;
 	background-size: cover;
@@ -260,11 +260,123 @@ button:focus {
 }
 
 
+.section_img1 {
+	
+	background: url('../img/mockup-1.png');
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.section_img1:hover{
+	background: url('../img/moodme_1.png');
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	transition:  0.5s ease-in-out; 
+	
+
+}
 
 
+.section_img2 {
+	
+	background: url('../img/Mockup_leanavi.png');
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.section_img2:hover{
+	background: url('../img/Mockup_leanavi2.png');
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	transition: 0.5s all ease-in-out; 
+
+}
+
+
+
+@keyframes slider {     
+	0% { left: -0; opacity: 0; }     
+	2% { opacity: 0; }  
+	15% { opacity: 0; }     
+	20% { left: -825px;  opacity: 0; }     
+	21% { opacity: 0; }     
+	24% { opacity: 0; }     
+	25% { left: -825px; opacity: 1; }     
+	45% { left: -825px; opacity: 1; }     
+	46% { opacity: 1; }     
+	48% { opacity: 1; }     
+	50% { left: -1650px; opacity: 1; }     
+	70% { left: -1650px; opacity: 1; }     
+	72% { opacity: 1; }     
+	74% { left: -2500px; opacity: 0; }    
+	75% { left: -2500px; opacity: 0; }   	
+	95% { left: -2500px; opacity: 0; }   	
+	97%  { left: -500000; opacity: 0; }   	
+	100% { left:  -1650px; opacity: 0; }
+  } 
+  
+
+
+
+  #slidercontainer { 
+	margin: 0 auto;
+	position: relative; 
+	overflow: hidden; 
+	height: 100vh;
+	
+
+  }
+  
+  
+  #slidercontainer img { 	
+	height: 100vh;
+	background-size: cover;
+	float: left;
+	
+  }
+  
+  #css3slider { 
+	animation-delay: 5s;
+	position: absolute; 
+	width:2500px;  
+	animation-name:slider;
+	animation-duration:15s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count:infinite;
+  }
+  
+  #css3slider:hover { 
+	animation-play-state:paused; 
+  }
+  
+  #css3slider img { 
+	float: right; 
+  }
+  
+  #slidercontainer:after { 
+	content: "❚❚"; 
+	font-size: 150px; 
+	position: absolute; 
+	z-index: 12; 
+	color: rgba(255,255,255, 0); 
+	left: 45%; top: 35%; 
+	transition: 0.5s all ease-in-out; 
+  }
+  
+  #slidercontainer:hover:after { 
+	color: rgba(255,255,255, 0.6);  
+  }
+  
 .section__gallery {
+
 	grid-area: 1 / 4 / 4 / 2;
-	padding: 2rem;
+	padding: 2rem 0;
 	display: grid;
 	grid-gap: 0.75rem;
 	grid-template-columns: 50% 50%;
