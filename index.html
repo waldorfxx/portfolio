@@ -16,6 +16,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/formbase.css" />
+    <link rel="stylesheet" type="text/css" href="css/w3.css" />
     <!--[if IE]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]--><script>document.documentElement.className = 'js';</script>
@@ -213,16 +214,24 @@
                 </div>
                 <div class="section__img">
                     
-                    <div class="section__img-inner section_img1">
+                    <div class="section__img-inner" id="slideshow1">
+                        
 
-                        <div id="slidercontainer">
-                            <div id="css3slider">
+                              <img class="mySlides demo fade" src="img\mockup-1.png">
+                              <img class="mySlides demo fade" src="img\moodme_1.png">
+                              <img class="mySlides demo fade" src="img\moodme_2.png">
+
+                                <div class="nav_slide">
+                                    <div class="prev" onclick="plusSlides(-1,slideshow1)">&#10094;</div>
+                                    <div class="next" onclick="plusSlides(1, slideshow1)">&#10095;</div>
                                 
-                              <img src="img\moodme_2.png">
-                              <img src="img\moodme_1.png">
-
-                            </div>
+                                    <span class="dot" onclick="currentSlide(1, slideshow1)"></span> 
+                                    <span class="dot" onclick="currentSlide(2, slideshow1)"></span> 
+                                    <span class="dot" onclick="currentSlide(3, slideshow1)"></span>
+                                </div>
+                               
                         </div>
+                   
 
                          <!-- Photo Slideshow
 
@@ -236,8 +245,7 @@
                             </div>
                           </div>  -->
 
-                    </div>
-                    
+           
 
                     
                 </div>
@@ -259,8 +267,23 @@
                         Based on the contents journey, you can visualize your learning path and get directions from travelers ahead of you.
                  </div>
                 <div class="section__img">
-                    <div class="section__img-inner section_img2"></div>
-                </div>
+                    <div class="section__img-inner" id="slideshow2">
+
+
+                        <img class="mySlides demo fade" src="img\Mockup_leanavi.png">
+                        <img class="mySlides demo fade" src="img\Mockup_leanavi2.png">
+
+                          <div class="nav_slide">
+                          <div class="prev" onclick="plusSlides(-1, slideshow2)">&#10094;</div>
+                          <div class="next" onclick="plusSlides(1, slideshow2)">&#10095;</div>
+                          
+                          <span class="dot" onclick="currentSlide(1, slideshow2)"></span> 
+                          <span class="dot" onclick="currentSlide(2, slideshow2)"></span> 
+
+                            </div>
+
+                    </div>
+               
 
                 <div class="section__more">
                     <div class="section__more-inner section__more-inner--bg1"></div>
@@ -282,7 +305,18 @@
                     </span></p>
                 </div>
                 <div class="section__img">
-                    <div class="section__img-inner" style="background-image: url(img/Mockup_medal.png)"></div>
+                    <div class="section__img-inner" id="slideshow3">
+
+
+                        <img class="mySlides demo fade" src="img\Mockup_medal.png">
+                        <img class="mySlides demo fade" src="img\Mockup_medal2.png">
+
+                          <div class="nav_slide">
+                          <div class="prev" onclick="plusSlides(-1, slideshow3)">&#10094;</div>
+                          <div class="next" onclick="plusSlides(1, slideshow3)">&#10095;</div>
+                          
+                          <span class="dot" onclick="currentSlide(1, slideshow3)"></span> 
+                          <span class="dot" onclick="currentSlide(2, slideshow3)"></span> </div>
                 </div>
                 <div class="section__more">
                     <div class="section__more-inner section__more-inner--bg1">
@@ -402,6 +436,80 @@
         return [...word].map( elemText => `<span>${elemText}</span>`).join('');
         }
     </script>
+
+    
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+
+
+
+<script>
+var slideshow1 = document.getElementById("slideshow1");
+slideshow1.currentSlideIndex = 1;
+showSlides(slideshow1.currentSlideIndex, slideshow1);
+
+var slideshow2 = document.getElementById("slideshow2");
+slideshow2.currentSlideIndex = 1;
+showSlides(slideshow2.currentSlideIndex, slideshow2);
+
+var slideshow3 = document.getElementById("slideshow3");
+slideshow3.currentSlideIndex = 1;
+showSlides(slideshow3.currentSlideIndex, slideshow3);
+
+function plusSlides(n, slideshow) {
+  showSlides(slideshow.currentSlideIndex += n, slideshow);
+}
+
+function currentSlide(n, slideshow) {
+  showSlides(slideshow.currentSlideIndex = n, slideshow);
+}
+
+function showSlides(n, slideshow) {
+  
+
+  var i;
+  var slides = slideshow.getElementsByClassName("mySlides");
+  var dots = slideshow.getElementsByClassName("dot");
+  if (n > slides.length) {slideshow.currentSlideIndex = 1}    
+  if (n < 1) {slideshow.currentSlideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideshow.currentSlideIndex-1].style.display = "block";  
+  dots[slideshow.currentSlideIndex-1].className += " active";
+}
+</script>
+    
+    
 
 </body>
 </html>
