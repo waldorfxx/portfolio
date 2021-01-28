@@ -194,7 +194,7 @@ main {
           transform: translateY(20px);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 800px) {
   .container h2 {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -689,7 +689,7 @@ input:-webkit-autofill {
   background: #f8b2ca;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 800px) {
   .form {
     position: absolute;
     right: 100px;
